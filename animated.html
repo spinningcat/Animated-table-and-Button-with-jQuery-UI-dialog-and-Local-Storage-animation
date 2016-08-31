@@ -1,0 +1,705 @@
+<HTML>
+<HEAD>
+<link rel="stylesheet" type="text/css" href="./style/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./style/style.css">
+<TITLE>Animated Table + local storage + jquery ui</TITLE>
+</HEAD>
+<BODY>
+  <button id="button11" class="buttonCla"></button>
+<div id="window">Information about animated button.</div>
+<br />
+<br />
+<br />
+<div class="overlap">
+    <div class="counter">
+        <div class="circle1">
+            <div class="redCounter"></div>
+        </div>
+        <div class="circle2">
+            <div class="orangeCounter"></div>
+        </div>
+        <div class="circle3">
+            <div class="grayCounter"></div>
+        </div>
+    </div>
+    <button id="button" class="box">URL Monitor</button>
+</div>
+<p id="p1"></p>
+<div id="popup">
+    <input type="button" value="Click Me" id="button1" />
+</div>
+<div class="modalContainer">
+<div id="popup2"></div>
+<div class="boxContainer hiding">
+    <div class="boxContainer2">
+        <div class="textContainer">Button lara tıklayarak renkli alanları animasyonlu bir hale gtirebilirsiniz. Renkleri eşleştitrken butonun yanında ki yazının rengine göre seçimi yapabilirsiniz.</div>
+    </div>
+    <div class="boxContainer3">
+        <div class="checkboxContainer">
+            <label ID="label1">
+                <input type="checkbox" id="checkbox" checked="checked" />Performans</label>
+            <br />
+            <label ID="label3">
+                <input type="checkbox" id="checkbox3" checked="checked" />Güncel olmayanlar</label>
+            <br />
+            <label ID="label4">
+                <input type="checkbox" id="checkbox4" checked="checked" />Kritik</label>
+            <br />
+        </div>
+    </div>
+</div>
+</div>
+<div id="tableContainer">
+    <div>
+        <table class="table table-bordered table-condensed  table-responsive tablesorter" cellspacing="0" rules="all" border="1" id="WebRequestGridView" style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">TimeSlice</th>
+                    <th class="hidden-xs hidden-sm" scope="col">URL</th>
+                    <th class="hidden-xs hidden-sm" scope="col">CurrentState</th>
+                    <th class="hidden-xs hidden-sm" scope="col">ReturnCode</th>
+                    <th class="visible-xs visible-sm visible-md visible-lg" scope="col">ReturnMessage</th>
+                    <th class="hidden-xs hidden-sm" scope="col">ResponseTime</th>
+                    <th class="hidden-xs hidden-sm hidden-md hidden-lg" scope="col"><a href="javascript:__doPostBack(&#39;WebRequestGridView&#39;,&#39;Sort$StackTrace&#39;)">StackTrace</a>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl02$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:08</td>
+                    <td class="hidden-xs hidden-sm">http://bar.com/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">500</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                </tr>
+                <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl03$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.cumhuriyet.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">0</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">check the following format meantioned in the stack trace</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">string can be empty or 14:00-15:00, 14:00-15:00|16:00-17:00, 14:00-15:00|16:00-17:00|18:00-19:00,... string can be empty or 0,1,2,3,4,5,6, 0|1, 0|1|2, 0|1|2|...|7, 0|7, 1|4|6|7, ...</td>
+                </tr>
+                <tr style="background-color:Blue;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl04$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.kvirc.net/</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Not Active</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Not Active</td>
+                </tr>
+                <tr style="background-color:Orange;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl05$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:47</td>
+                    <td class="hidden-xs hidden-sm">http://www.asp.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl06$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:42</td>
+                    <td class="hidden-xs hidden-sm">http://www.bilgi.edu.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl07$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:49</td>
+                    <td class="hidden-xs hidden-sm">http://www.foo.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl08$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:38</td>
+                    <td class="hidden-xs hidden-sm">http://www.sozcu.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl09$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:12</td>
+                    <td class="hidden-xs hidden-sm">http://www2.zargan.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl10$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:33</td>
+                    <td class="hidden-xs hidden-sm">https://dev.mysql.com/downloads/workbench/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl11$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:37</td>
+                    <td class="hidden-xs hidden-sm">https://eksisozluk.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl12$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:16</td>
+                    <td class="hidden-xs hidden-sm">https://msdn.microsoft.com/tr-tr/dn308572.aspx</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:Gray;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl13$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:43</td>
+                    <td class="hidden-xs hidden-sm">https://www.dal.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl14$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:45</td>
+                    <td class="hidden-xs hidden-sm">https://www.google.com</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                  <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl02$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:08</td>
+                    <td class="hidden-xs hidden-sm">http://bar.com/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">500</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                </tr>
+                <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl03$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.cumhuriyet.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">0</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">check the following format meantioned in the stack trace</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">string can be empty or 14:00-15:00, 14:00-15:00|16:00-17:00, 14:00-15:00|16:00-17:00|18:00-19:00,... string can be empty or 0,1,2,3,4,5,6, 0|1, 0|1|2, 0|1|2|...|7, 0|7, 1|4|6|7, ...</td>
+                </tr>
+                <tr style="background-color:Blue;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl04$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.kvirc.net/</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Not Active</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Not Active</td>
+                </tr>
+                <tr style="background-color:Orange;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl05$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:47</td>
+                    <td class="hidden-xs hidden-sm">http://www.asp.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl06$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:42</td>
+                    <td class="hidden-xs hidden-sm">http://www.bilgi.edu.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl07$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:49</td>
+                    <td class="hidden-xs hidden-sm">http://www.foo.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl08$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:38</td>
+                    <td class="hidden-xs hidden-sm">http://www.sozcu.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl09$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:12</td>
+                    <td class="hidden-xs hidden-sm">http://www2.zargan.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl10$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:33</td>
+                    <td class="hidden-xs hidden-sm">https://dev.mysql.com/downloads/workbench/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl11$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:37</td>
+                    <td class="hidden-xs hidden-sm">https://eksisozluk.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl12$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:16</td>
+                    <td class="hidden-xs hidden-sm">https://msdn.microsoft.com/tr-tr/dn308572.aspx</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:Gray;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl13$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:43</td>
+                    <td class="hidden-xs hidden-sm">https://www.dal.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl14$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:45</td>
+                    <td class="hidden-xs hidden-sm">https://www.google.com</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                  <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl02$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:08</td>
+                    <td class="hidden-xs hidden-sm">http://bar.com/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">500</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                </tr>
+                <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl03$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.cumhuriyet.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">0</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">check the following format meantioned in the stack trace</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">string can be empty or 14:00-15:00, 14:00-15:00|16:00-17:00, 14:00-15:00|16:00-17:00|18:00-19:00,... string can be empty or 0,1,2,3,4,5,6, 0|1, 0|1|2, 0|1|2|...|7, 0|7, 1|4|6|7, ...</td>
+                </tr>
+                <tr style="background-color:Blue;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl04$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.kvirc.net/</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Not Active</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Not Active</td>
+                </tr>
+                <tr style="background-color:Orange;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl05$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:47</td>
+                    <td class="hidden-xs hidden-sm">http://www.asp.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl06$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:42</td>
+                    <td class="hidden-xs hidden-sm">http://www.bilgi.edu.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl07$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:49</td>
+                    <td class="hidden-xs hidden-sm">http://www.foo.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl08$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:38</td>
+                    <td class="hidden-xs hidden-sm">http://www.sozcu.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl09$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:12</td>
+                    <td class="hidden-xs hidden-sm">http://www2.zargan.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl10$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:33</td>
+                    <td class="hidden-xs hidden-sm">https://dev.mysql.com/downloads/workbench/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl11$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:37</td>
+                    <td class="hidden-xs hidden-sm">https://eksisozluk.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl12$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:16</td>
+                    <td class="hidden-xs hidden-sm">https://msdn.microsoft.com/tr-tr/dn308572.aspx</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:Gray;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl13$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:43</td>
+                    <td class="hidden-xs hidden-sm">https://www.dal.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl14$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:45</td>
+                    <td class="hidden-xs hidden-sm">https://www.google.com</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                  <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl02$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:08</td>
+                    <td class="hidden-xs hidden-sm">http://bar.com/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">500</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">The remote server returned an error: (500) Internal Server Error.</td>
+                </tr>
+                <tr style="background-color:Red;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl03$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.cumhuriyet.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">-1</td>
+                    <td class="hidden-xs hidden-sm">0</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">check the following format meantioned in the stack trace</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">string can be empty or 14:00-15:00, 14:00-15:00|16:00-17:00, 14:00-15:00|16:00-17:00|18:00-19:00,... string can be empty or 0,1,2,3,4,5,6, 0|1, 0|1|2, 0|1|2|...|7, 0|7, 1|4|6|7, ...</td>
+                </tr>
+                <tr style="background-color:Blue;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl04$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:34</td>
+                    <td class="hidden-xs hidden-sm">http://www.kvirc.net/</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="hidden-xs hidden-sm">-99</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Not Active</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Not Active</td>
+                </tr>
+                <tr style="background-color:Orange;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl05$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:47</td>
+                    <td class="hidden-xs hidden-sm">http://www.asp.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl06$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:42</td>
+                    <td class="hidden-xs hidden-sm">http://www.bilgi.edu.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl07$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:49</td>
+                    <td class="hidden-xs hidden-sm">http://www.foo.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl08$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:38</td>
+                    <td class="hidden-xs hidden-sm">http://www.sozcu.com.tr/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl09$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:12</td>
+                    <td class="hidden-xs hidden-sm">http://www2.zargan.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl10$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:33</td>
+                    <td class="hidden-xs hidden-sm">https://dev.mysql.com/downloads/workbench/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl11$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:37</td>
+                    <td class="hidden-xs hidden-sm">https://eksisozluk.com/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl12$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:35:16</td>
+                    <td class="hidden-xs hidden-sm">https://msdn.microsoft.com/tr-tr/dn308572.aspx</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:Gray;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl13$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:43</td>
+                    <td class="hidden-xs hidden-sm">https://www.dal.net/</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+                <tr style="background-color:SpringGreen;">
+                    <td>
+                        <input type="image" name="WebRequestGridView$ctl14$ctl00" class="buttonClass cell-which-triggers-popup" src="http://i.imgur.com/7S84htL.png/" style="height:15px;width:15px;" />
+                    </td>
+                    <td class="truncate">04.08.2015 16:34:45</td>
+                    <td class="hidden-xs hidden-sm">https://www.google.com</td>
+                    <td class="hidden-xs hidden-sm">1</td>
+                    <td class="hidden-xs hidden-sm">200</td>
+                    <td class="visible-xs visible-sm visible-md visible-lg">Succesfull</td>
+                    <td class="hidden-xs hidden-sm">00:00:00</td>
+                    <td class="hidden-xs hidden-sm hidden-md hidden-lg">Succesfull</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jquery.min.js "></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/animated.js "></script>
+</BODY>
+</HTML>
