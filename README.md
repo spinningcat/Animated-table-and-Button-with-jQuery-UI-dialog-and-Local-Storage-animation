@@ -44,7 +44,6 @@
     <div class="circle3">
       <div class="grayCounter"></div>
     </div>
-  </div>
 ```
 ```javascript
   // selecting tr of the table
@@ -71,7 +70,7 @@
     $(".grayCounter").text(grayCounter);
   }
 ```
-### **Figure 1 - Code that shows the line of counters**
+
 
 <> **LocalStorage**
 
@@ -231,7 +230,7 @@ $(document).on("change", "#checkbox4", function(event) {
 
 ```
 
-<> **Get Spesific line with click**
+<> Get Spesific line with click
 - **Each line has a button for displaying all columns's information on nice dialog box. This is illustrated below.**
 
 ![Lines][Lines]
@@ -313,7 +312,7 @@ $("td").on("click", ".buttonClass", function(event) {
 
 <> Assigning the color of button
 - **To determine the problematic records as fast as you can is essential part of business cycle. So there is one more helper functionality for people who monitor the system tables. You reach system table by clicking button and button has counters on it as meantioned above. The color of button will be assigned according to color of first line of table. Just to remember, Red, gray and orange records are important for us because that signifies there is some problems occured.**
-- ** The principle is simple that if there is red records button will be red whereas if table has another colors like gray and orange, button will be one of these colors. The only condition that there wont be records with red colors for orange colored button or there wont be orange colors for gray colored button.** 
+- **The principle is simple that if there is red records button will be red whereas if table has another colors like gray and orange, button will be one of these colors. The only condition that there wont be records with red colors for orange colored button or there wont be orange colors for gray colored button.** 
 
 ##Code Snippet
 
