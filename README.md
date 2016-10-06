@@ -20,14 +20,14 @@
 
 ##### *Aim of this project*
 
-**This frontend development is designed for users who are monitoring system tables. Because the companies which will use that development, have to offer a services to clients based on 7/24 principles.**
+This frontend development is designed for users who are monitoring system tables. Because the companies which will use that development, have to offer a services to clients based on 7/24 principles.
 
-**The aim here is to give users wh	o monitor the system more flexibility and more control over the system. To achieve this, some helper things are being used such as managing animation with one click, getting the information of spesific line with one click, localstorage, counters for stating the amount of records with spesific color, assigning the color of button. These helper functionalities will be explained more detailed with particular images in the next section.**
+The aim here is to give users who monitor the system more flexibility and more control over the system. To achieve this, some helper things are being used such as managing animation with one click, getting the information of spesific line with one click, localstorage, counters for stating the amount of records with spesific color, assigning the color of button. These helper functionalities will be explained more detailed with particular images in the next section.
 
 ##### *Feature and functionality of this Software (With images and code pieces)*
 
 <> **Counters**
-- *Counters noticing users about the amount of problematic records on the table. You can see necessary code below.*
+- Counters noticing users about the amount of problematic records on the table. You can see necessary code below.
 
 ![Counters][Counters]
 
@@ -76,7 +76,7 @@
 
 ###**[MDN LocalStorage Web Page](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage)**
 
-- *localStorage is an object that can be seen as "client session". Its a storage object to save data into.*
+- localStorage is an object that can be seen as "client session". Its a storage object to save data into.
 
 ## Code Snippets
 
@@ -94,13 +94,13 @@ if (localStorage.getItem('popup2')) {
 
 <> **Managing Animation with Click **
 
-- *In design of this app., the table has records with particular colors like red, gray, blue, orange, gray.*
+- In design of this app., the table has records with particular colors like red, gray, blue, orange, gray.
 
 ![AnimationOff][Records]
 
 [Records]: https://i.itsosticky.com/epgwho.png "Records"
 
-- *Records that has one of those colors need to be reported. So in case table have such records will be animated automatically to grab the attention of system observer. The extra feature that comes in handy, those people can manage the animations with the help of division that you see the image below.*
+- Records that has one of those colors need to be reported. So in case table have such records will be animated automatically to grab the attention of system observer. The extra feature that comes in handy, those people can manage the animations with the help of division that you see the image below.
 
 ![AnimationOff][AnimationOff]
 
@@ -230,8 +230,8 @@ $(document).on("change", "#checkbox4", function(event) {
 
 ```
 
-<> Get Spesific line with click
-- **Each line has a button for displaying all columns's information on nice dialog box. This is illustrated below.**
+<> **Get Spesific line with click**
+- Each line has a button for displaying all columns's information on nice dialog box. This is illustrated below.
 
 ![Lines][Lines]
 
@@ -310,9 +310,9 @@ $("td").on("click", ".buttonClass", function(event) {
 
 ```
 
-<> Assigning the color of button
-- **To determine the problematic records as fast as you can is essential part of business cycle. So there is one more helper functionality for people who monitor the system tables. You reach system table by clicking button and button has counters on it as meantioned above. The color of button will be assigned according to color of first line of table. Just to remember, Red, gray and orange records are important for us because that signifies there is some problems occured.**
-- **The principle is simple that if there is red records button will be red whereas if table has another colors like gray and orange, button will be one of these colors. The only condition that there wont be records with red colors for orange colored button or there wont be orange colors for gray colored button.** 
+<> **Assigning the color of button**
+- To determine the problematic records as fast as you can is essential part of business cycle. So there is one more helper functionality for people who monitor the system tables. You reach system table by clicking button and button has counters on it as meantioned above. The color of button will be assigned according to color of first line of table. Just to remember, Red, gray and orange records are important for us because that signifies there is some problems occured.
+- The principle is simple that if there is red records button will be red whereas if table has another colors like gray and orange, button will be one of these colors. The only condition that there wont be records with red colors for orange colored button or there wont be orange colors for gray colored button.
 
 ##Code Snippet
 
@@ -365,8 +365,5 @@ setInterval(function() {
 <> **You can manage the animations by clicking radio box in that jquery dialog.**
 
 <> **You can refresh the page with f5 and same div will be opened after page refreshing thanks to local storage.**
-
-<> **Optional: You can remove any ranges of date with the choice you made by clicking pencil button.**
-
 
 #**[Working demo](http://jsfiddle.net/hellyeah/pbc0u9cy/embedded/result/)**
