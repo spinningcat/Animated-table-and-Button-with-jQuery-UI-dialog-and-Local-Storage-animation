@@ -13,7 +13,7 @@
 
 <> **jQuery UI dialog -> https://jqueryui.com/dialog/**
 
-##### "What spesific features used in that project"
+##### "What specific features used in that project"
 
 <> **Local storage**
 <> **Animation**
