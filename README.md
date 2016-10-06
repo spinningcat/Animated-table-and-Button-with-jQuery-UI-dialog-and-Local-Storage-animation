@@ -354,7 +354,7 @@ setInterval(function() {
 //button is animated constantly thanks to setInterval function
 ```
 
-##### "The working flow of this projet*
+##### *The working flow of this projet*
 
 <> **Click button -> You will see table**
 
