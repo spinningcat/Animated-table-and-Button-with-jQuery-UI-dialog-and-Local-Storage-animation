@@ -21,21 +21,14 @@ $(document).ready(function () {
         $(".orangeCounter").text(orangeCounter);
         $(".grayCounter").text(grayCounter);
     }
-});
-
 /* first pop up when you click animated button you will see pop up contains table and buttons. Buttons will have some functionality.  Thats the plan. This function is to put hand image button to the head part of table. */
-
-$("link[rel=icon]").attr("href", "http://i.imgur.com/2yuQih2.png");
-$(document).ready(function () {
+    $("link[rel=icon]").attr("href", "http://i.imgur.com/2yuQih2.png");
     var buttonToTheHead = $("#WebRequestGridView thead tr th:first-child");
     $button = $("#button1");
     $button.appendTo(buttonToTheHead);
     $button.removeClass("hideButton");
     $button.show();
-});
 
-
-$(document).ready(function () {
     $(".buttonClass").each(function (index, element) {
         $(element).prop("id", index);
 
@@ -364,9 +357,6 @@ $(document).on("change", "#checkbox4", function (event) {
 
 /*---------------------------*/
 //information
-
-$(document).ready(function () {
-
     $("#button").mouseover(function () {
         $("#button11").css("opacity", "1");
     });
